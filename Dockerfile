@@ -21,10 +21,6 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 RUN sudo apt -y upgrade
 RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven
 
-RUN useradd -ms /bin/bash developer
-USER developer
-WORKDIR /home/developer
-
 USER root
 RUN usermod -aG sudo developer
 RUN usermod -aG docker developer
