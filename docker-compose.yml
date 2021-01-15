@@ -1,17 +1,18 @@
 version: "3.3"
 services:
   remotedev_xrdp:
+    container_name: remotedev_xrdp
     build: .
     restart: unless-stopped
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - ${PWD}/CREATEUSERS.TXT:/root/createusers.txt
     - /dev/shm:/dev/shm
-    - user-data:/home/developer:rw
+    - user-data:/home/user:rw
     ports:
     - "3389:3389"
     environment:
-    - USER=developer
+    - USER=user
     - TZ="Europe/Berlin"
     privileged: true
 
