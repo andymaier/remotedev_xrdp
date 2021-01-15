@@ -5,8 +5,8 @@ RUN sudo apt -y install dirmngr
 RUN sudo apt-key adv --fetch-keys https://s3.eu-central-1.amazonaws.com/jetbrains-ppa/0xA6E8698A.pub.asc
 RUN echo "deb http://jetbrains-ppa.s3-website.eu-central-1.amazonaws.com bionic main" | sudo tee /etc/apt/sources.list.d/jetbrains-ppa.list > /dev/null
 #RUN sudo add-apt-repository -y ppa:pbek/qownnotes
-RUN sudo add-apt-repository -y ppa:fish-shell/release-3
-RUN sudo add-apt-repository -y ppa:nextcloud-devs/client
+#RUN sudo add-apt-repository -y ppa:fish-shell/release-3
+#RUN sudo add-apt-repository -y ppa:nextcloud-devs/client
 RUN sudo add-apt-repository -y ppa:eugenesan/ppa
 RUN sudo add-apt-repository -y ppa:phoerious/keepassxc
 RUN sudo add-apt-repository -y ppa:peek-developers/stable
