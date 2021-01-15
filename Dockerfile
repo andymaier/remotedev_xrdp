@@ -19,7 +19,7 @@ RUN sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/rep
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN sudo apt -y upgrade
-RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver systemd docker-compose kafkacat code maven autocutsel
+RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven
 
 RUN useradd -ms /bin/bash developer
 USER developer
