@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - CREATEUSERS.TXT:/root/createusers.txt
+    - .CREATEUSERS.TXT:/root/createusers.txt
     - /dev/shm:/dev/shm
     - user-data:/home/user:rw
     ports:
