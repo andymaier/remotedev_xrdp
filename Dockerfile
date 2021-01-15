@@ -1,8 +1,7 @@
 FROM rattydave/docker-ubuntu-xrdp-mate-custom:20.04
 
-RUN sudo sed -i 's|http://tw.|http://de.|g' /etc/apt/sources.list
-RUN sudo apt update
-RUN sudo apt -y install dirmngr software-properties-common
+
+RUN sudo apt update && apt -y install dirmngr software-properties-common
 RUN sudo apt-key adv --fetch-keys https://s3.eu-central-1.amazonaws.com/jetbrains-ppa/0xA6E8698A.pub.asc
 RUN echo "deb http://jetbrains-ppa.s3-website.eu-central-1.amazonaws.com bionic main" | sudo tee /etc/apt/sources.list.d/jetbrains-ppa.list > /dev/null
 RUN sudo add-apt-repository -y ppa:pbek/qownnotes
@@ -14,8 +13,11 @@ RUN sudo add-apt-repository -y ppa:peek-developers/stable
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
+# vscode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+
+RUN sudo sed -i 's|http://tw.|http://de.|g' /etc/apt/sources.list
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN sudo apt -y upgrade
