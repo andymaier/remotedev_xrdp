@@ -1,7 +1,7 @@
 FROM rattydave/docker-ubuntu-xrdp-mate-custom:20.04
 
 
-RUN sudo apt update && apt -y install dirmngr software-properties-common
+#RUN sudo apt update && apt -y install dirmngr software-properties-common
 #RUN sudo apt-key adv --fetch-keys https://s3.eu-central-1.amazonaws.com/jetbrains-ppa/0xA6E8698A.pub.asc
 #RUN echo "deb http://jetbrains-ppa.s3-website.eu-central-1.amazonaws.com bionic main" | sudo tee /etc/apt/sources.list.d/jetbrains-ppa.list > /dev/null
 #RUN sudo add-apt-repository -y ppa:pbek/qownnotes
@@ -23,6 +23,6 @@ RUN sudo apt update && apt -y install dirmngr software-properties-common
 #RUN sudo apt -y upgrade
 #RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven
 
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN sudo apt -y upgrade
-RUN sudo apt -y install apt-transport-https ca-certificates curl
+#RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+#RUN sudo apt -y upgrade
+#RUN sudo apt -y install apt-transport-https ca-certificates curl
