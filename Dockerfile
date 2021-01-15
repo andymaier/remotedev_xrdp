@@ -22,3 +22,7 @@ RUN sudo sed -i 's|http://tw.|http://de.|g' /etc/apt/sources.list
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN sudo apt -y upgrade
 RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven
+
+#chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo apt install ./google-chrome-stable_current_amd64.deb
