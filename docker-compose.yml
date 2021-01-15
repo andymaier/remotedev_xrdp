@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  remotedev_xrdp:
+    build: .
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ${PWD}/CREATEUSERS.TXT:/root/createusers.txt
+    - /dev/shm:/dev/shm
+    - user-data:/home/developer:rw
+    ports:
+    - "3389:3389"
+    environment:
+    - USER=developer
+    - TZ="Europe/Berlin"
+    privileged: true
+
+volumes:
+  user-data:
+  etc-data:
+  usr-data:
+
+networks:
+  default:
+    external:
+      name: cp-all-in-one_default
