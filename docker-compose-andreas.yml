@@ -11,7 +11,7 @@ services:
     - user-data:/home/andreas:rw
     - etc-data:/etc:rw
     ports:
-    - "3390:3389"
+    - "3389:3389"
     environment:
     #- USER=andreas
     - TZ="Europe/Berlin"
