@@ -64,5 +64,5 @@ RUN wget https://github.com/meetfranz/franz/releases/download/v5.6.1/franz_5.6.1
 RUN sudo apt install ./franz_5.6.1_amd64.deb
 
 # citrix installieren
-RUN wget https://downloads.citrix.com/18880/icaclientWeb_20.12.0.12_amd64.deb?__gda__=1610819618_f3ef2c3dc6e636bcae195f9834a07c98
-RUN sudo apt install ./icaclientWeb_20.12.0.12_amd64.deb
+RUN wget https://downloads.citrix.com/18880/icaclientWeb_20.12.0.12_i386.deb?__gda__=1610819618_1105c6bac6b71659f1c4d49e24675c91
+RUN sudo apt install ./icaclientWeb_20.12.0.12_i386.deb
