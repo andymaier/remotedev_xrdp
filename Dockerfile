@@ -32,3 +32,21 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     ${CHROME_VERSION:-google-chrome-stable} \
   && rm /etc/apt/sources.list.d/google-chrome.list \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+# wine 
+ADD https://dl.winehq.org/wine-builds/winehq.key /Release.key
+
+RUN echo "deb http://dl.winehq.org/wine-builds/ubuntu/ xenial main" >> /etc/apt/sources.list && \
+	apt-key add Release.key && \
+	dpkg --add-architecture i386 && \
+	apt-get update && \
+	apt-get install -y --install-recommends winehq-devel \
+	&& rm -rf /var/lib/apt/lists/* /Release.key
+
+RUN groupadd -g 1000 wine \
+	&& useradd -g wine -u 1000 wine \
+	&& mkdir -p /home/wine/.wine && chown -R wine:wine /home/wine
+
+# Run MetaTrader as non privileged user.
+USER wine
+ENV WINEARCH win32
