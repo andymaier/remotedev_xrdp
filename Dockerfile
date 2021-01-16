@@ -21,7 +21,7 @@ RUN sudo sed -i 's|http://tw.|http://de.|g' /etc/apt/sources.list
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN sudo apt -y upgrade
-RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven libappindicator3-1
+RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven libappindicator3-1 gdebi
 
 #chrome
 ARG CHROME_VERSION="google-chrome-stable"
@@ -64,6 +64,5 @@ RUN wget https://github.com/meetfranz/franz/releases/download/v5.6.1/franz_5.6.1
 RUN sudo apt install ./franz_5.6.1_amd64.deb
 
 # citrix installieren
-USER root
 RUN wget https://downloads.citrix.com/18880/icaclient_20.12.0.12_amd64.deb?__gda__=1610819618_c5701547c5dba142b639baf568f1f853
-RUN sudo apt install -y ./icaclient_20.12.0.12_amd64.deb
+RUN gdebi icaclient_20.12.0.12_amd64.deb
