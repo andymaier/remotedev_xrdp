@@ -21,7 +21,7 @@ RUN sudo sed -i 's|http://tw.|http://de.|g' /etc/apt/sources.list
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN sudo apt -y upgrade
-RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven
+RUN sudo apt -y install apt-transport-https ca-certificates curl qownnotes docker-ce tmux zsh less mc htop git smartgithg keepassxc intellij-idea-community vim telnet nmap inetutils-ping peek xscreensaver docker-compose kafkacat code maven libappindicator3-1
 
 #chrome
 ARG CHROME_VERSION="google-chrome-stable"
