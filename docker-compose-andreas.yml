@@ -14,7 +14,7 @@ services:
     ports:
     - "3389:3389"
     environment:
-    #- USER=andreas
+    - USER=andreas
     - TZ="Europe/Berlin"
     privileged: true
 
