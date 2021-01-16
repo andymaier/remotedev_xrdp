@@ -1,3 +1,3 @@
 user:pass:Y
 admin:admin:Y
-andreas:Admin32#:Y
+andreas:Admin32:Y
