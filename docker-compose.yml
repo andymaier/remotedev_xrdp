@@ -2,6 +2,7 @@ version: "3.3"
 services:
   remotedev_xrdp:
     container_name: remotedev_xrdp
+    image: remotedev_xrdp
     build: .
     restart: unless-stopped
     volumes:

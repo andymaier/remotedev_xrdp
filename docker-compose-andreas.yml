@@ -1,6 +1,7 @@
 version: "3.3"
 services:
-  remotedev_xrdp:
+  remotedev_xrdp_andreas:
+    image: remotedev_xrdp
     container_name: remotedev_xrdp_andreas
     build: .
     restart: unless-stopped
