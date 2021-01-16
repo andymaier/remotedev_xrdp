@@ -9,7 +9,7 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./CREATEUSERS.TXT:/root/createusers.txt:rw
     - /dev/shm:/dev/shm
-    - user-data:/home/andreas:rw
+    - user-data:/home:rw
     - etc-data:/etc:rw
     ports:
     - "3389:3389"
