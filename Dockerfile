@@ -43,10 +43,10 @@ RUN echo "deb http://dl.winehq.org/wine-builds/ubuntu/ xenial main" >> /etc/apt/
 	apt-get install -y --install-recommends winehq-devel \
 	&& rm -rf /var/lib/apt/lists/* /Release.key
 
+USER root
 RUN groupadd -g 2000 wine \
 	&& useradd -g wine -u 2000 wine \
 	&& mkdir -p /home/wine/.wine && chown -R wine:wine /home/wine
 
 # Run MetaTrader as non privileged user.
-USER wine
 ENV WINEARCH win32
