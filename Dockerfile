@@ -50,3 +50,16 @@ RUN groupadd -g 2000 wine \
 
 # Run MetaTrader as non privileged user.
 ENV WINEARCH win32
+
+#telegram 
+RUN wget https://updates.tdesktop.com/tlinux/tsetup.2.5.1.tar.xz -O /tmp/telegram.tar.xz \
+    && cd /tmp/ \
+    && tar xvfJ /tmp/telegram.tar.xz \
+    && mv /tmp/Telegram/Telegram /usr/bin/Telegram \
+    && rm -rf /tmp/{telegram.tar.xz,Telegram}
+
+
+# franz messenger whatsapp
+RUN wget https://github.com/meetfranz/franz/releases/download/v5.6.1/franz_5.6.1_amd64.deb
+RUN sudo apt install ./franz_5.6.1_amd64.deb
+
