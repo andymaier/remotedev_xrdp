@@ -14,7 +14,7 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-RUN sudo bash -c echo 'deb https://apt.kubernetes.io/ kubernetes-xenial main' > /etc/apt/sources.list.d/kubernetes.list
+RUN sudo add-apt-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
 
 # vscode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
