@@ -69,4 +69,5 @@ USER root
 #RUN chmod 777 icaclient_20.12.0.12_amd64.deb
 #RUN sudo apt-get -f install ./icaclient_20.12.0.12_amd64.deb
 
+RUN useradd -ms /bin/bash andreas
 RUN usermod -aG sudo andreas
